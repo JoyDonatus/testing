@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript" src="/index.js"></script>
+</head>
+<body>
+    <div>
+        <p id="firstNamePara"></p>
+        <p id="preferencePara"></p>
+    </div>
+    <script>
+        window.addEventListener('load', () => {
+            const params = (new URL(document.location)).searchParams;
+            const name = params.get('firstName');
+            const pref = params.get('preference');
+
+            document.getElementById('firstNamePara').innerHTML = name;
+            document.getElementById('pref').innerHTML = pref;
+        })
+    </script>
+</body>
+</html>
