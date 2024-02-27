@@ -12,14 +12,19 @@
         <p id="preferencePara"></p>
     </div>
     <script>
-        window.addEventListener('load', () => {
-            const params = (new URL(document.location)).searchParams;
-            const name = params.get('firstName');
-            const pref = params.get('preference');
+        // window.addEventListener('load', () => {
+        //     const params = (new URL(document.location)).searchParams;
+        //     const name = params.get('firstName');
+        //     const pref = params.get('preference');
 
-            document.getElementById('firstNamePara').innerHTML = name;
-            document.getElementById('pref').innerHTML = pref;
-        })
+        //     document.getElementById('firstNamePara').innerHTML = name;
+        //     document.getElementById('pref').innerHTML = pref;
+        // })
+        const first_Name = localStorage.getItem('name');
+        const order_Number = localStorage.getItem('pref');
+
+        document.getElementById('firstNamePara').textContent = 'Thank you, ' + first_Name + '!';
+        document.getElementById('preferencePara').textContent = 'Order #ALB-' + order_Number;
     </script>
 </body>
 </html>
